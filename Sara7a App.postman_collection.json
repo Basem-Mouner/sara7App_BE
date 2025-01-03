@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "4e631dd0-0df7-47c7-a30f-38cc650da9b7",
+		"name": "Sara7a App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37252643"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"basem mouner rezk\",\r\n    \"email\": \"basem.software@yahoo.com\",\r\n    \"password\":\"1234\",\r\n    \"confirmationPassword\":\"1234\",\r\n    \"gender\":\"male\",\r\n    \"phone\":\"01555570468\",\r\n    \"role\":\"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_sara7a}}/auth/signup",
+							"host": [
+								"{{base_sara7a}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"basem.software@yahoo.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_sara7a}}/auth/login",
+							"host": [
+								"{{base_sara7a}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirm email",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJhc2VtLnNvZnR3YXJlQHlhaG9vLmNvbSIsImlhdCI6MTczNTIxNTU3N30.iImvGSuL2egfmIVsyWp_Cvfmg0titeXHBhDDFLG9n6Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_sara7a}}/auth/confirmEmail",
+							"host": [
+								"{{base_sara7a}}"
+							],
+							"path": [
+								"auth",
+								"confirmEmail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "user profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzZkODA5MzhiNDg0ZDE0OGM1YjBmMmUiLCJpc0xvZ2dlZCI6dHJ1ZSwiaWF0IjoxNzM1MjI5NzY5LCJleHAiOjE3MzUyMzMzNjl9.GMT56hkWxQuuYGXwJOMwAGl_lz9w6Q0CVoEoGCmqEzI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzZkODA5MzhiNDg0ZDE0OGM1YjBmMmUiLCJpc0xvZ2dlZCI6dHJ1ZSwiaWF0IjoxNzM1NjcyMzIwLCJleHAiOjE3MzU2NzU5MjB9.ZwsBMSAXErG9VSeeEfOpZs4H45SvZeIVqITwiBq5Ics",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"basem mouner rezk mansour\",\r\n    \"gender\":\"male\",\r\n    \"phone\":\"01555570468\",\r\n    \"DOB\":\"5/8/1990\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update ppassword",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc0ZmM3MTg3YTc4NDFjMjhlYTQ0YTkiLCJpc0xvZ2dlZCI6dHJ1ZSwiaWF0IjoxNzM1NzI1NTUzLCJleHAiOjE3MzU3MjkxNTN9.JECyfJYT6ivhTpNi0dxwhFwdFT1C99filV2KoPLc-nA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"Actionman2030\",\r\n    \"password\":\"Actionman2030\",\r\n    \"confirmationPassword\":\"Actionman20303\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc0ZmM3MTg3YTc4NDFjMjhlYTQ0YTkiLCJpc0xvZ2dlZCI6dHJ1ZSwiaWF0IjoxNzM1NzI1NTUzLCJleHAiOjE3MzU3MjkxNTN9.JECyfJYT6ivhTpNi0dxwhFwdFT1C99filV2KoPLc-nA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"basem.software@yahoo.com\",\r\n    \"password\":\"Actionman203040\",\r\n    \"otp\":\"YX4TG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc0ZmM3MTg3YTc4NDFjMjhlYTQ0YTkiLCJpc0xvZ2dlZCI6dHJ1ZSwiaWF0IjoxNzM1NzI1NTUzLCJleHAiOjE3MzU3MjkxNTN9.JECyfJYT6ivhTpNi0dxwhFwdFT1C99filV2KoPLc-nA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\":\"basem.software@yahoo.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/forgetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "frizz account",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc0ZmM3MTg3YTc4NDFjMjhlYTQ0YTkiLCJpc0xvZ2dlZCI6dHJ1ZSwiaWF0IjoxNzM1NzM0NTQxLCJleHAiOjE3MzU3MzgxNDF9.DIdi2xUal_Ycp0H7TRAqRfD2q3-EGkZ3ThllYxewONo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/profile/frizz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"frizz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "defrizz account",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJhc2VtLnNvZnR3YXJlQHlhaG9vLmNvbSIsImlhdCI6MTczNTc1MDQyM30.srBVh6Ils69R-MxXujc5qpKPTRFpILBvRTO3d6hYueA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/profile/deFrizz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"deFrizz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "share user profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/6774fc7187a7841c28ea44a9/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"6774fc7187a7841c28ea44a9",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "message",
+			"item": [
+				{
+					"name": "send message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"message\":\"i love you beso\",\r\n\"recipientId\":\"6774fc7187a7841c28ea44a9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_sara7a",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "admin_Token",
+			"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzZhZjMwMGQ0MTNhODFiNmQ2ZTBlOTciLCJpc0xvZ2dlZCI6dHJ1ZSwiaWF0IjoxNzM1MDY4ODAzLCJleHAiOjE3MzUwNzI0MDN9.iRVCYNCGoD_5VD_1kFhDmJtx0IPbVEyjc5DIVf3kcEI"
+		}
+	]
+}
